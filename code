@@ -1,0 +1,939 @@
+print(f'''{'='*11} Bem-Vindo(a) {'='*11}
+Esse Programa foi desenvolvido pelos Alunos do 2°ano G
+Esperamos que seja útil e gostem!''')
+print('')
+#  Variaveis; Fechar o Programa: 15.135
+v = vi = d = di = t = ti = a = 0
+while True:
+    print(f'''{'=-='*13}
+[ 1 ] Movimento Retilíneo e Uniforme(MRU)
+[ 2 ] Movimento Retilíneo Uniformemente Variado(MRUV)
+[ 3 ] Não sei o que é cada um, ou a Diferença.''')
+    escolha = input('O que você deseja saber hoje? ').split()
+    escolha = ''.join(escolha)
+    if escolha.isnumeric():
+        if escolha.isdigit():
+            escolha = int(escolha)  # Finalizados: [1][-][3]
+            if escolha == 1:
+                while True:
+                    print('=' * 39)
+                    print('''[1] Velocidade(V) \n[2] Espaço/Distância(S/d) \n[3] Tempo(t) \n[4] Voltar''')
+                    opc = input('O que você deseja calcular? ')
+                    if opc.isnumeric() and opc.isdigit():
+                        opc = int(opc)
+                        if opc == 1:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mVelocidade\033[0:0:0m \n[1] m/s \n[2] km/h \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        print('=' * 39)
+                                        print('Para Calcular a Velocidade no MU a formula é \033[1:31:40mV = Δd/Δt\033[0:0:0m')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informada: ''')
+                                        d = input('Digite a Distância Final[metros]: ')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[segundos]: ')
+                                        print('-'*15)
+                                        if di.isalpha() and d.isalpha() and t.isalpha() and ti.isalpha() and di in ",;:?!" and d in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                d = float(d)
+                                                di = float(di)
+                                                t = float(t)
+                                                ti = float(ti)
+                                                t = t - ti
+                                                if t == 0:
+                                                    t = 1
+                                                v = (d - di) / t
+                                                print(f'A Velocidade é igual a \033[1:34m{v:.2f} m/s\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 2:
+                                        print('Para Calcular a Velocidade no MU a formula é \033[1:31:40mV = Δd/Δt\033[0:0:0m')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[km], \nconsidere igual a 0 se não informada: ''')
+                                        d = input('Digite a Distância Final[km]: ')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[horas]: ')
+                                        print('-'*15)
+                                        if di.isalpha() and d.isalpha() and t.isalpha() and ti.isalpha() and di in ",;:?!" and d in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                d = float(d)
+                                                di = float(di)
+                                                t = float(t)
+                                                ti = float(ti)
+                                                t = t - ti
+                                                if t == 0:
+                                                    t = 1
+                                                v = (d - di) / t
+                                                print(f'A Velocidade é igual a \033[1:34m{v:.2f} km/h\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Valor Invalido!')
+                                else:
+                                    print('Digite um Número. Tente Novamente.')
+                        elif opc == 2:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mEspaço/Distância\033[0:0:0m \n[1] Metros(m) \n[2] Quilômetros(km) \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        print('=' * 39)
+                                        print('''Para Calcular a Distância no MU a formula é: \n \033[1:31:40mΔS = V * Δt\033[0:0:0m''')
+                                        print('-'*15)
+                                        v = input('Digite a Velocidade[m/s]: ')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[segundos]: ')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                        print('-'*15)
+                                        if di.isalpha() and v.isalpha() and t.isalpha() and ti.isalpha() and di in ",;:?!" and v in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                v = float(v)
+                                                t = float(t)
+                                                ti = float(ti)
+                                                di = float(di)
+                                                d = v * (t - ti)
+                                                dfinal = d + di
+                                                print(f'A Distância é igual a \033[1:34m{dfinal:.2f} m\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 2:
+                                        print('=' * 39)
+                                        print('''Para Calcular a Distância no MU a formula é: \n \033[1:31:40mΔS = V * Δt\033[0:0:0m''')
+                                        print('-'*15)
+                                        v = input('Digite a Velocidade[km/h]: ')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[horas]: ')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[quilômetros], \nconsidere igual a 0 se não informado: ''')
+                                        print('-' * 15)
+                                        if di.isalpha() and v.isalpha() and t.isalpha() and ti.isalpha() and di in ",;:?!" and v in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                v = float(v)
+                                                t = float(t)
+                                                ti = float(ti)
+                                                di = float(di)
+                                                d = v * (t - ti)
+                                                dfinal = d + di
+                                                if dfinal < 0:
+                                                    dfinal = 0 - d
+                                                else:
+                                                    dfinal = dfinal
+                                                print(f'A Distância é igual a \033[1:34m{dfinal:.2f} km\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Escolha um Valor Valido. Tente Novamente.')
+                                else:
+                                    print('Digite um Número. Tente Novamente.')
+                        elif opc == 3:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mTempo\033[0:0:0m \n[1] Segundos(s) \n[2] Horas(h) \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        print('=' * 39)
+                                        print('''Para Calcular o Tempo no MU a formula é: \n \033[1:31:40mΔt = ΔS/V \033[0:0:0m''')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                        d = input('Digite a Distância Final[metros]: ')
+                                        print('-'*15)
+                                        v = input('Digite a Velocidade[m/s]: ')
+                                        print('-'*15)
+                                        if di.isalpha() and v.isalpha() and d.isalpha() and ti.isalpha() and di in ",;:?!" and d in ",;:?!" and d in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                v = float(v)
+                                                d = float(d)
+                                                di = float(di)
+                                                ti = float(ti)
+                                                t = (d - di) / v
+                                                t = t + ti
+                                                if t < 0:
+                                                    t = t * (-1)
+                                                elif t == 0:
+                                                    t = 1
+                                                else:
+                                                    t = t
+                                                print(f'O Tempo é igual a \033[1:34m{t:.2f} s\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 2:
+                                        print('=' * 39)
+                                        print('''Para Calcular o Tempo no MU a formula é: \n \033[1:31:40mΔt = ΔS/V \033[0:0:0m''')
+                                        print('-'*15)
+                                        ti = input('''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                        print('-'*15)
+                                        di = input('''Digite a Distância Inicial[km], \nconsidere igual a 0 se não informado: ''')
+                                        d = input('Digite a Distância Final[km]: ')
+                                        print('-'*15)
+                                        v = input('Digite a Velocidade[km/h]: ')
+                                        print('-'*15)
+                                        if di.isalpha() and v.isalpha() and d.isalpha() and ti.isalpha() and di in ",;:?!" and d in ",;:?!" and d in ",;:?!" and ti in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                v = float(v)
+                                                d = float(d)
+                                                di = float(di)
+                                                ti = float(ti)
+                                                t = (d - di) / v
+                                                t = t + ti
+                                                if t < 0:
+                                                    t = t * (-1)
+                                                elif t == 0:
+                                                    t = 1
+                                                else:
+                                                    t = t
+                                                print(f'O Tempo é igual a \033[1:34m{t:.2f} h\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Escolha um Valor Valido. Tente Novamente.')
+                                else:
+                                    print('Digite um Número. Tente Novamente.')
+                        elif opc == 4:
+                            break
+                        else:
+                            print('Escolha um Valor Valido. Tente Novamente.')
+                    else:
+                        print('Digite um Número. Tente Novamente.')
+            elif escolha == 2:
+                while True:
+                    print('=' * 39)
+                    print('''[1] Velocidade(V) \n[2] Espaço/Distância(S/d) \n[3] Tempo(t) \n[4] Aceleração(a) \n[5] Voltar''')
+                    opc = input('O que você deseja calcular? ')
+                    if opc.isnumeric() and opc.isdigit():
+                        opc = int(opc)
+                        if opc == 1:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mVelocidade\033[0:0:0m \n[1] m/s \n[2] km/h \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        while True:
+                                            print('=' * 39)
+                                            print('''\033[1mVelocidade\033[0:0:0m \n[1] V = Vo + a * Δt \n[2] V² = Vo² + 2 * a * Δd \n[3] Sair(Voltar)''')
+                                            item = input('Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    vi = input('''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[segundos]: ')
+                                                    print('-' * 15)
+                                                    if a.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and a in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            v = vi + (a * (t - ti))
+                                                            print(
+                                                                f'A Velocidade é igual a \033[1:34m{v:.2f} m/s\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[metros]: ')
+                                                    print('-' * 15)
+                                                    if di.isalpha() and d.isalpha() and a.isalpha() and vi.isalpha() and di in ",;:?!" and d in ",;:?!" and a in ",;:?!" and vi in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            d = float(d)
+                                                            di = float(di)
+                                                            d = d - di
+                                                            v = (vi ** 2) + (2 * a * d)
+                                                            v = v ** (1 / 2)
+                                                            print(
+                                                                f'A Velocidade é igual a \033[1:34m{v:.2f} m/s\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 2:
+                                        while True:
+                                            print('=' * 39)
+                                            print(
+                                                '''\033[1mVelocidade\033[0:0:0m \n[1] V = Vo + a * Δt \n[2] V² = Vo² + 2 * a * Δd \n[3] Sair(Voltar)''')
+                                            item = input(
+                                                'Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[horas]: ')
+                                                    print('-' * 15)
+                                                    if a.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and a in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            a = a * 3.6
+                                                            v = vi + (a * (t - ti))
+                                                            print(
+                                                                f'A Velocidade é igual a \033[1:34m{v:.2f} km/h\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    vi = input('''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    di = input('''Digite a Distância Inicial[Quilômetros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[Quilômetros]: ')
+                                                    print('-' * 15)
+                                                    if di.isalpha() and d.isalpha() and a.isalpha() and vi.isalpha() and di in ",;:?!" and d in ",;:?!" and a in ",;:?!" and vi in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            d = float(d)
+                                                            di = float(di)
+                                                            a = a * 3.6
+                                                            d = d - di
+                                                            v = (vi ** 2) + (2 * a * d)
+                                                            v = v ** (1 / 2)
+                                                            print(
+                                                                f'A Velocidade é igual a \033[1:34m{v:.2f} km/h\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Escolha um Valor Valido. Tente Novamente.')
+                                else:
+                                    print('Digite um Número Valido, por favor!')
+                        elif opc == 2:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mDistância\033[0:0:0m \n[1] Metros \n[2] Quilômetros \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        while True:
+                                            print('=' * 39)
+                                            print(
+                                                '''\033[1mDistância\033[0:0:0m \n[1] S = So + (Vo * Δt) + (a * Δt²)/2 \n[2] S = (v² - Vo²) / (2 * a) \n[3] S = ((V + Vo) / 2) * Δt \n[4] S = a * Δt² \n[5] Sair(Voltar)''')
+                                            item = input(
+                                                'Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[segundos]: ')
+                                                    print('-' * 15)
+                                                    if a.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and di.isalpha() and di in ",;:?!" and a in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            di = float(di)
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            t = t + ti
+                                                            d = di + (vi * t) + ((a * t) / 2)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[m/s]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if vi.isalpha() and v.isalpha() and a.isalpha() and vi in ",;:?!" and v in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            v = float(v)
+                                                            d = ((v * v) - (vi * vi)) / (2 * a)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[m/s]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[segundos]: ')
+                                                    print('-' * 15)
+                                                    if v.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and v in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            v = float(v)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            t = t - ti
+                                                            d = ((v + vi) / 2) * t
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 4:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informada: ''')
+                                                    t = input('Digite o Tempo Final[segundos]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if ti.isalpha() and t.isalpha() and a.isalpha() and ti in ",;:?!" and t in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            ti = float(ti)
+                                                            t = float(t)
+                                                            t = t - ti
+                                                            d = a * (t * t)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 5:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 2:
+                                        while True:
+                                            print('=' * 39)
+                                            print(
+                                                '''\033[1mDistância\033[0:0:0m \n[1] S = So + (Vo * Δt) + (a * Δt²)/2 \n[2] S = (v² - Vo²) / (2 * a) \n[3] S = ((V + Vo) / 2) * Δt \n[4] S = a * Δt² \n[5] Sair(Voltar)''')
+                                            item = input(
+                                                'Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Inicial[quilômetros], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[horas]: ')
+                                                    print('-' * 15)
+                                                    if a.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and di.isalpha() and di in ",;:?!" and a in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            di = float(di)
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            a = a * 3.6
+                                                            t = t - ti
+                                                            d = di + (vi * t) + ((a * t) / 2)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[km/h]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if vi.isalpha() and v.isalpha() and a.isalpha() and vi in ",;:?!" and v in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            v = float(v)
+                                                            d = ((v * v) - (vi * vi)) / (2 * a)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    print('=' * 39)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[km/h]: ')
+                                                    print('-' * 15)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                                    t = input('Digite o Tempo Final[horas]: ')
+                                                    print('-' * 15)
+                                                    if v.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and v in ",;:?!" and vi in ",;:?!" and t in ",;:?!" and ti in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            v = float(v)
+                                                            vi = float(vi)
+                                                            t = float(t)
+                                                            ti = float(ti)
+                                                            t = t - ti
+                                                            d = ((v + vi) / 2) * t
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 4:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    t = input('Digite a Velocidade Final[m/s]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if ti.isalpha() and t.isalpha() and a.isalpha() and ti in ",;:?!" and t in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            ti = float(ti)
+                                                            t = float(t)
+                                                            a = a * 3.6
+                                                            t = t - ti
+                                                            d = a * (t * t)
+                                                            print(
+                                                                f'A Distância é igual a \033[1:34m{d:.2f} m\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 5:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Digite um Número Valido, por favor!')
+                        elif opc == 3:
+                            while True:
+                                print('=' * 39)
+                                print('''\033[1mTempo\033[0:0:0m \n[1] segundos \n[2] horas \n[3] Sair(Voltar)''')
+                                si = input('Em que Medidas? ')
+                                if si.isnumeric() and si.isdigit():
+                                    si = int(si)
+                                    if si == 1:
+                                        while True:
+                                            print('=' * 39)
+                                            print(
+                                                '''\033[1mTempo\033[0:0:0m \n[1] Δt = (2 * ΔS) / (Vo + V) \n[2] Δt = (V * Vo) / a \n[3] Δt = √(ΔS / a) \n[4] Sair(Voltar)''')
+                                            item = input(
+                                                'Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[m/s]: ')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[metros]: ')
+                                                    print('-' * 15)
+                                                    if v.isalpha() and vi.isalpha() and d.isalpha() and di.isalpha() and ti.isalpha() and ti in ",;:?!" and di in ",;:?!" and v in ",;:?!" and vi in ",;:?!" and d in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            ti = float(ti)
+                                                            di = float(di)
+                                                            v = float(v)
+                                                            vi = float(vi)
+                                                            d = float(d)
+                                                            d = d - di
+                                                            t = (2 * d) / (vi + v)
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} s\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite o Velocidade Final[m/s]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if vi.isalpha() and v.isalpha() and a.isalpha() and ti.isalpha() and vi in ",;:?!" and ti in ",;:?!" and v in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            ti = float(ti)
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            v = float(v)
+                                                            t = (v - vi) / a
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} s\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[metros]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if ti.isalpha() and d.isalpha() and di.isalpha() and a.isalpha() and ti in ",;:?!" and di in ",;:?!" and d in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            ti = float(ti)
+                                                            d = float(d)
+                                                            di = float(di)
+                                                            d = d - di
+                                                            t = (d / a) ** (1 / 2)
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} s\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 4:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 2:
+                                        while True:
+                                            print('=' * 39)
+                                            print(
+                                                '''\033[1mTempo\033[0:0:0m \n[1] Δt = (2 * ΔS) / (Vo + V) \n[2] Δt = (V - Vo) / a \n[3] Δt = √(ΔS / a) \n[4] Sair(Voltar)''')
+                                            item = input(
+                                                'Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                            if item.isnumeric() and item.isdigit():
+                                                item = int(item)
+                                                if item == 1:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite a Velocidade Final[km/h]: ')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[quilômetros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[quilômetros]: ')
+                                                    print('-' * 15)
+                                                    if v.isalpha() and vi.isalpha() and d.isalpha() and di.isalpha() and ti.isalpha() and ti in ",;:?!" and di in ",;:?!" and v in ",;:?!" and vi in ",;:?!" and d in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            ti = float(ti)
+                                                            di = float(di)
+                                                            v = float(v)
+                                                            vi = float(vi)
+                                                            d = float(d)
+                                                            d = d - di
+                                                            t = (2 * d) / (vi + v)
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} h\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 2:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informado: ''')
+                                                    print('-' * 15)
+                                                    vi = input(
+                                                        '''Digite a Velocidade Inicial[km/h], \nconsidere igual a 0 se não informada: ''')
+                                                    v = input('Digite o Velocidade Final[km/h]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if vi.isalpha() and v.isalpha() and a.isalpha() and ti.isalpha() and vi in ",;:?!" and ti in ",;:?!" and v in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            ti = float(ti)
+                                                            a = float(a)
+                                                            vi = float(vi)
+                                                            v = float(v)
+                                                            a = a * 3.6
+                                                            t = (v - vi) / a
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} h\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 3:
+                                                    print('=' * 39)
+                                                    ti = input(
+                                                        '''Digite o Tempo Inicial[horas], \nconsidere igual a 0 se não informada: ''')
+                                                    print('-' * 15)
+                                                    di = input(
+                                                        '''Digite a Distância Inicial[quilômetros], \nconsidere igual a 0 se não informado: ''')
+                                                    d = input('Digite a Distância Final[quilômetros]: ')
+                                                    print('-' * 15)
+                                                    a = input('Digite a Aceleração[m/s²]: ')
+                                                    print('-' * 15)
+                                                    if ti.isalpha() and d.isalpha() and di.isalpha() and a.isalpha() and ti in ",;:?!" and di in ",;:?!" and d in ",;:?!" and a in ",;:?!":
+                                                        print('Informe um valor valido!')
+                                                    else:
+                                                        try:
+                                                            a = float(a)
+                                                            ti = float(ti)
+                                                            d = float(d)
+                                                            di = float(di)
+                                                            a = a * 3.6
+                                                            d = d - di
+                                                            t = (d / a) ** (1 / 2)
+                                                            t = t + ti
+                                                            if t < 0:
+                                                                t = t * (-1)
+                                                            elif t == 0:
+                                                                t = 1
+                                                            else:
+                                                                t = t
+                                                            print(
+                                                                f'O Tempo é igual a \033[1:34m{t:.2f} h\033[0:0:0m')
+                                                        except ValueError:
+                                                            print('Informe um valor valido!')
+                                                elif item == 4:
+                                                    break
+                                                else:
+                                                    print('Escolha um Valor Valido. Tente Novamente.')
+                                            else:
+                                                print('Digite um Número Valido, por favor!')
+                                    elif si == 3:
+                                        break
+                                    else:
+                                        print('Digite um Número Valido, por favor!')
+                        elif opc == 4:
+                            while True:
+                                print('=' * 39)
+                                print(
+                                    '''\033[1mAceleração\033[0:0:0m \n[1] a = ΔV / Δt \n[2] a = ΔS / Δt²\n[3] Sair(Voltar)''')
+                                item = input('Quais fórmulas posso usar com base nas variáveis disponíveis? ')
+                                if item.isnumeric() and item.isdigit():
+                                    item = int(item)
+                                    if item == 1:
+                                        print('=' * 39)
+                                        ti = input(
+                                            '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[segundos]: ')
+                                        print('-' * 15)
+                                        vi = input(
+                                            '''Digite a Velocidade Inicial[m/s], \nconsidere igual a 0 se não informada: ''')
+                                        v = input('Digite a Velocidade Final[m/s]: ')
+                                        print('-' * 15)
+                                        if v.isalpha() and vi.isalpha() and t.isalpha() and ti.isalpha() and ti in ",;:?!" and v in ",;:?!" and vi in ",;:?!" and t in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                t = float(t)
+                                                ti = float(ti)
+                                                v = float(v)
+                                                vi = float(vi)
+                                                t = t - ti
+                                                if t < 0:
+                                                    t = t * (-1)
+                                                elif t == 0:
+                                                    t = 1
+                                                else:
+                                                    t = t
+                                                a = (v - vi) / t
+                                                print(f'A Aceleração é igual a \033[1:34m{a:.2f} m/s²\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif item == 2:
+                                        print('=' * 39)
+                                        ti = input(
+                                            '''Digite o Tempo Inicial[segundos], \nconsidere igual a 0 se não informado: ''')
+                                        t = input('Digite o Tempo Final[segundos]: ')
+                                        print('-' * 15)
+                                        di = input(
+                                            '''Digite a Distância Inicial[metros], \nconsidere igual a 0 se não informada: ''')
+                                        d = input('Digite a Distância Final[metros]: ')
+                                        print('-' * 15)
+                                        if d.isalpha() and di.isalpha() and t.isalpha() and ti.isalpha() and ti in ",;:?!" and d in ",;:?!" and di in ",;:?!" and t in ",;:?!":
+                                            print('Informe um valor valido!')
+                                        else:
+                                            try:
+                                                t = float(t)
+                                                ti = float(ti)
+                                                d = float(d)
+                                                di = float(di)
+                                                t = t - ti
+                                                if t < 0:
+                                                    t = t * (-1)
+                                                elif t == 0:
+                                                    t = 1
+                                                else:
+                                                    t = t
+                                                a = (d - di) / (t * t)
+                                                print(f'A Aceleração é igual a \033[1:34m{a:.2f} m/s²\033[0:0:0m')
+                                            except ValueError:
+                                                print('Informe um valor valido!')
+                                    elif item == 3:
+                                        break
+                                    else:
+                                        print('Escolha um Valor Valido. Tente Novamente.')
+                                else:
+                                    print('Digite um Número Valido, por favor!')
+                        elif opc == 5:
+                            break
+                        else:
+                            print('Escolha um Valor Valido. Tente Novamente.')
+                    else:
+                        print('Digite um Número Valido, por favor!')
+            elif escolha == 3:
+                print('=' * 39)
+                print('Basicamente o Movimento Retilíneo e Uniforme a Velocidade não muda \nela e constante, ou seja não possui aceleraçao; Ja no \nMovimento Retilíneo Uniformemente Variado, ele possui aceleraçao \npor isso sua velocidade muda constantemente.')
+            elif escolha == 15135:
+                break  # Fim do Codigo
+            else:
+                print('Escolha um Valor Valido. Tente Novamente.')
+        else:
+            print('Digite um Valor Inteiro!')
+    else:
+        print('Digite um Número Valido, por favor!')
+print('')
+print(f'''\033[1mObrigado por utilizar o nosso programa, \nesperamos que tenha gostado, volte sempre \n{' '*33}-2°ano G''')
+#  Davi Aaujo, David Ítalo, Pedro Henrique, Nathanael Bueno
+#  © Todos os Direitos Reservados
